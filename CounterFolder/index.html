@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Counter</title>
+
+    <style type="text/css">
+    textarea {
+      width: 50%;
+      height: 150px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      resize: none;
+    }
+
+    .btn{
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          -webkit-transition-duration: 0.4s; /* Safari */
+          transition-duration: 0.4s;
+          cursor: pointer;
+    }
+    .button{
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+        margin-left: 818px;
+        position: relative;
+    }
+
+    .button:hover{
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    label {
+        margin-left: 20px;
+        position: absolute;
+        padding-top: 27px;
+    }
+
+    </style>
+</head>
+<body>
+    <textarea rows="4" cols="50" name="textArea" id="textArea"></textarea><br>
+        <label id="log">No File Found</label>
+        <input type="button" value="Run Now" class="btn button" name="count" onclick="calculate()">
+
+    <script type="text/javascript">
+         var calculate = function() {
+          var string = document.getElementById('textArea').value;
+          var length = string.split(/[^\s]+/).length - 1;
+          document.getElementById('log').innerHTML = "Total Words : " + length;
+        };
+
+    </script>
+</body>
+</html>
